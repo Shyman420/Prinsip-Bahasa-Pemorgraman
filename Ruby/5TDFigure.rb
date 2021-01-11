@@ -1,8 +1,13 @@
+# Superclass Two Dimensional Figure
 class TDFigure
+
+    #initializing 
     def initialize(w, h)
         @width, @height = w, h
     end
 
+    #let area and perimeter method empty
+    #we can override subclasses
     def area
     end
 
@@ -10,41 +15,60 @@ class TDFigure
     end
 end
 
+
+# Sub class Rectangle
 class Rectangle < TDFigure
+
+    #no need to write intialize, because rectangle sub class consists intialize method from TDFigure superclass
+    
+    #overriding area method
     def area
-        puts @width.to_i * @height.to_i
+
+        @width.to_i * @height.to_i
     end
 
+    #overriding perimeter method
     def perimeter
-        puts (2 * @width.to_i) + (2 * @height.to_i)
+
+        (2 * @width.to_i) + (2 * @height.to_i)
     end
 end
 
+
+# Subclass Square
 class Square < TDFigure
+
+    #overriding superclass initialize
+    #the side length of the square is taken from the user's first input value (the 'X')
     def initialize(x)
+
         @side = x
     end
 
     def area
-        puts @side.to_i ** 2
+
+        @side.to_i ** 2
     end
 
     def perimeter
-        puts 4 * @side.to_i
+        
+        4 * @side.to_i
     end
 end
 
+#main
 x = gets
 y = gets
+
+#polymorphism using inheritance
+a = TDFigure.new(x, y)
+
+# create new square object
 a = Square.new(x)
-puts "Square area : "
-a.area
+puts "Square area : #{a.area}" 
+puts "Square perimeter : #{a.perimeter}" 
 
-puts "Square perimeter : " 
-a.perimeter
-
+# create new rectangle object
 a = Rectangle.new(x, y)
-puts "Rectangle area : " 
-a.area
-puts "Rectangle perimeter : " 
-a.perimeter
+puts "Rectangle area : #{a.area}" 
+puts "Rectangle perimeter : #{a.perimeter}" 
