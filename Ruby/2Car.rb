@@ -44,7 +44,7 @@ class Car < Vehicle
     end
 
     def printStats
-        puts ("Specification :\nModel : #{@model}Brand : #{@brand}Year : #{@year}")
+        puts ("Specification :\nModel : #{@model.chomp}, Brand : #{@brand.chomp}, Year : #{@year}")
     end
 end
 
