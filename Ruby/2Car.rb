@@ -40,7 +40,7 @@ class Car < Vehicle
         @model, @brand = model, brand
 
         # use super for calling superclass(Vehicle) constructor
-        @year = super(year)
+        super(year)
     end
 
     def printStats
