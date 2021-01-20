@@ -1,10 +1,14 @@
 class Product
+
+    # encapsulation 
     private
     def initialize(name, brand, type, price, stock)
         @name, @brand, @type, @price, @stock = name, brand, type, price, stock
     end
 
     public
+
+    # get and set section
     def getName
         @name
     end
@@ -45,6 +49,7 @@ class Product
         @stock = newStock
     end
 end
+
 # create array
 a = []
 # store the object into the array
@@ -54,6 +59,7 @@ a.push(Product.new("Samba", "Adidas","Shoe",100,220))
 a.push(Product.new("Mercurial", "Nike","Shoe",20000,2))
 a.push(Product.new("Suede Classic+", "Puma","Shoe",20000,2))
 
+# show all products using loop
 for i in 0..(a.length - 1)
-    puts("#{a[i].getName} | #{a[i].getBrand} | #{a[i].getType} | #{a[i].getPrice} | #{a[i].getStock} ")  
+    puts("#{a[i].getName} \t| #{a[i].getBrand} \t| #{a[i].getType} \t| #{a[i].getPrice} \t| #{a[i].getStock} ")  
 end
